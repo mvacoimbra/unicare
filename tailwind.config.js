@@ -1,30 +1,38 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
+  darkMode: ["class"],
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
+  prefix: "",
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'sans': ['Poppins', 'sans-serif'],
+      }
+    }
   },
   plugins: [
     require('daisyui'),
   ],
   daisyui: {
-    themes: [
-      {
-        unicare: {
-          "primary": "#337EFF",
-          "secondary": "#005EFF",
-          "accent": "#93FC3B",
-          "neutral": "#6C6C6C",
-          "base-100": "#F5F5F5",
-          "info": "#71C1EE",
-          "success": "#4BB531",
-          "warning": "#EC8307",
-          "error": "#E4180A",
-        },
-      },
-    ],
-  },
+    themes: [{
+      myTheme: {
+        "primary": "#2839C2",
+        "primary-content": "#ffffff",
+        "secondary": "#08247F",
+        "accent": "#43B1FB",
+        "neutral": "#121308",
+        "base-100": "#fff8f4",
+        "base-content": "#ffffff",
+        "info": "#87DCF3",
+        "success": "#328555",
+        "warning": "#F69D26",
+        "error": "#F02C2C",
+      }
+    }]
+  }
 }
